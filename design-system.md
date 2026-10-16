@@ -1,4 +1,18 @@
+---
+governance:
+  enforcement: strict
+  allow_arbitrary_values: false # Dilarang keras memakai arbitrary CSS (seperti bg-[#...])
+  fallback_strategy: nearest_token # Harus memilih token yang sudah ada jika tidak ada padanan langsung
 
+rules:
+  colors:
+    - "Hanya gunakan token resmi: primary, neutral, warning, error, success."
+    - "Warna dekoratif atau aksen baru WAJIB didaftarkan terlebih dahulu ke design-system.md sebelum digunakan di komponen."
+  components:
+    button:
+      variants_allowed: [primary, secondary, warning, ghost]
+      color_overrides: forbidden
+---
 <!-- AI SYSTEM INSTRUCTION & BRIEF: DO NOT IGNORE -->
 > ### CRITICAL AI DIRECTIVE: PROTOCOL FOR WORKFLOW
 > 1. **Wajib Membaca Terlebih Dahulu:** Sebelum mengeksekusi PERMINTAAN APAPUN dari pengguna terkait pembuatan komponen, pembuatan kode, tata letak, atau modifikasi UI, AI WAJIB membaca seluruh isi file `design-system.md` ini terlebih dahulu.
